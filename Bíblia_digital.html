@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="js/biblia.js"></script>
+    <link href="css/biblia.css" rel="stylesheet">
+
+    <title>Biblia Digital</title>
+
+</head>
+
+<body>
+
+    <h1>Bíblia Digital</h1>
+    <!-- Menu hambúrguer início -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <span>
+                    <button class="btn btn-primary mb-2" type="button" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAKElEQVRIiWNgGAXDHjAisf/TwmwmKhs6CgYhGE1Fo4ByMJqKRsEQAADWCQMKYvEFtQAAAABJRU5ErkJggg==" />
+
+                    </button>
+                </span>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body botao">
+                        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse"
+                            data-target=".multi-collapse" aria-expanded="false"
+                            aria-controls="antigoTestamento novoTestamento">Bíblia Completa</button>
+                        <button type="button" class="btn btn-primary mb-2" onclick="buscar()" data-toggle="modal"
+                            data-target="#ModalLongoExemplo">
+                            66 Livros da bíblia
+                        </button>
+                        <button type="button" class="btn btn-primary" data-toggle="collapse"
+                            data-target="#versiculoUnico">
+                            Versículo único
+                        </button>
+                    </div>
+                </div>
+                <!-- menu hambúrguer fim -->
+
+                <!-- Botão para abrir modais -->
+                <div>
+                    <div class=" d-flex justify-content-center">
+                        <p>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target=".multi-collapse" aria-expanded="false"
+                                aria-controls="antigoTestamento novoTestamento"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAsklEQVRIie2W0QnCQBAFRxF7kui/VmAjFqFtaQeWYMA29MNEDuOJ796iBG5gCYHdzO1eQg4qf2YOHIArcDOiBTaKeG8K07goYrfT1xgwyYjfJhsMPFPjYQ2wCltJxzcd97VK7hOnYwtV3PBYfdpBfy+NXRV/ys9tm5Rc97iKxyueGbVLxE8oZZQ/CYtfiFslOfL0sS4RL5Qihdyoz921+K0tZUvcuE+qfEfMoe+oiiuh3AETfXwrnuSbOAAAAABJRU5ErkJggg=="
+                                    style="width: 20px; height: 20px;" />
+                                Bíblia Completa</button>
+                            <button type="button" class="btn btn-primary" onclick="buscar()" data-toggle="modal"
+                                data-target="#ModalLongoExemplo">
+                                66 Livros da bíblia
+                            </button>
+                            <button type="button" class="btn btn-primary " data-toggle="collapse"
+                                data-target="#versiculoUnico">
+                                Versículo único
+                            </button>
+                        </p>
+                    </div>
+                    <!-- Modal -->
+                    <!-- <header> -->
+                    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog"
+                        aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title " id="TituloModalLongoExemplo">Todos os livros da bíblia</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 id="ler"></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="collapse multi-collapse" id="novoTestamento">
+                                <div class="card card-body">
+                                    <label for="opcao">Novo Testamento</label>
+                                    <select class="form-control" id="livro">
+
+                                        <option value="mt">Mateus</option>
+                                        <option value="mc">Marcos</option>
+                                        <option value="lc">Lucas</option>
+                                        <option value="jo">João</option>
+                                        <option value="at">Atos dos Apóstolos</option>
+                                        <option value="rm">Romanos</option>
+                                        <option value="1co">1 Coríntios</option>
+                                        <option value="2co">2 Coríntios</option>
+                                        <option value="gl">Galátas</option>
+                                        <option value="ef">Efésios</option>
+                                        <option value="fp">Filipenses</option>
+                                        <option value="cl">Colossenses</option>
+                                        <option value="1ts">1 Tessalonicenses</option>
+                                        <option value="2ts">2 Tessalonicenses</option>
+                                        <option value="1tm">1 Timóteo</option>
+                                        <option value="2tm">2 Timóteo</option>
+                                        <option value="tt">Tito</option>
+                                        <option value="fm">Filemon</option>
+                                        <option value="hb">Hebreus</option>
+                                        <option value="tg">Tiago</option>
+                                        <option value="1pe">1 Pdro</option>
+                                        <option value="2pe">2 Pedro</option>
+                                        <option value="1jo">1 João</option>
+                                        <option value="2jo">2 João</option>
+                                        <option value="3jo">3 João</option>
+                                        <option value="jd">Judas</option>
+                                        <option value="ap">Apocalipse</option>
+                                    </select>
+                                    <!-- versão --><br>
+                                    <div class="form-group">
+                                        <label for="versao">Versão</label>
+                                        <select class="form-control" id="versao">
+                                            <option value="nvi">Nova Versão Internacional - NVI</option>
+                                            <option value="acf">Almeida Corrigida Fiel - ACF</option>
+                                            <option value="apee">Francês - APEE</option>
+                                            <option value="bbe">Bíblia em Inglês Básico - BBE</option>
+                                            <option value="kjv">King James Version - KJV</option>
+                                            <option value="ra">Revista Atualizada - RA</option>
+                                            <option value="rvr">Reina Valera - RVR</option>
+                                        </select>
+                                    </div>
+                                    <!-- input capítulo -->
+                                    <div class="form-group">
+                                        <label for="capitulo">Capítulo</label>
+                                        <input type="number" class="form-control" id="capitulo" placeholder="Capítulo"
+                                            min="1">
+                                    </div>
+                                    <!-- botão para abir modal -->
+                                    <button type="button" onclick="novoTestamento()" class="btn btn-success"
+                                        data-target="#texto" data-toggle="modal">Buscar</button>
+
+                                    <!-- modal para ler descrição e texto -->
+                                    <div class="modal fade" id="texto" tabindex="-1" role="dialog"
+                                        aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <h3 id="capituloTop"></h3>
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="TituloModalLongoExemplo">
+                                                        <h1 id="lerNovo"></h1>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Fechar">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3 id="ler1"></h3>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal"
+                                                        class="btn btn-outline-danger unico">Fechar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="antigoTestamento">
+                                <div class="card card-body">
+                                    <label for="opcao">Antigo Testamento</label>
+                                    <select class="form-control" id="livroAntigo">
+                                        <option value="gn">Gênesis</option>
+                                        <option value="ex">Êxodo</option>
+                                        <option value="lv">Levítico</option>
+                                        <option value="nm">Números</option>
+                                        <option value="dt">Deuteronômio</option>
+                                        <option value="js">Josué</option>
+                                        <option value="jz">Juízes</option>
+                                        <option value="rt">Rute</option>
+                                        <option value="1sm">1 Samuel</option>
+                                        <option value="2sm">2 Samuel</option>
+                                        <option value="1rs">1 Reis</option>
+                                        <option value="2rs">2 Reis</option>
+                                        <option value="1cr">1 Crônicas</option>
+                                        <option value="2cr">2 Crônicas</option>
+                                        <option value="ed">Esdras</option>
+                                        <option value="ne">Neemias</option>
+                                        <option value="et">Ester</option>
+                                        <option value="job">Jó</option>
+                                        <option value="sl">Salmos</option>
+                                        <option value="pv">Provérbios</option>
+                                        <option value="ec">Eclesiastes</option>
+                                        <option value="ct">Cânticos dos Cânticos</option>
+                                        <option value="is">Isaías</option>
+                                        <option value="jr">Jeremias</option>
+                                        <option value="lm">Lamentações</option>
+                                        <option value="ez">Ezequiel</option>
+                                        <option value="dn">Daniel</option>
+                                        <option value="os">Oseias</option>
+                                        <option value="jl">Joel</option>
+                                        <option value="am">Amós</option>
+                                        <option value="ob">Obadias</option>
+                                        <option value="mq">Miqueias</option>
+                                        <option value="na">Naum</option>
+                                        <option value="hc">Habacuque</option>
+                                        <option value="sf">Sofonias</option>
+                                        <option value="ag">Ageu</option>
+                                        <option value="zc">Zacarias</option>
+                                        <option value="ml">Malaquias</option>
+                                    </select>
+                                    <br>
+                                    <!-- versão -->
+                                    <div class="form-group">
+                                        <label for="versaoAntigo">Versão</label>
+                                        <select class="form-control" id="versaoAntigo">
+                                            <option value="nvi">Nova Versão Internacional - NVI</option>
+                                            <option value="acf">Almeida Corrigida Fiel - ACF</option>
+                                            <option value="apee">Francês - APEE</option>
+                                            <option value="bbe">Bíblia em Inglês Básico - BBE</option>
+                                            <option value="kjv">King James Version - KJV</option>
+                                            <option value="ra">Revista Atualizada - RA</option>
+                                            <option value="rvr">Reina Valera - RVR</option>
+
+                                        </select>
+                                    </div>
+                                    <!-- capítulo -->
+                                    <div class="form-group">
+                                        <label for="capituloAntigo">Capítulo</label>
+                                        <input type="number" class="form-control" id="capituloAntigo"
+                                            placeholder="Capítulo" min="1">
+                                    </div>
+                                    <!-- botão para abrir modal -->
+                                    <button type="button" onclick="antigoTestamento()" class="btn btn-success"
+                                        data-target="#textoAntigo" data-toggle="modal">Buscar</button>
+
+                                    <!-- modal pra ler descrição e o texto-->
+                                    <div class="modal fade" id="textoAntigo" tabindex="-1" role="dialog"
+                                        aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <h3 id="antigoTop"></h3>
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="TituloModalLongoExemplo">
+                                                        <h1 id="lerDescricao"></h1>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Fechar">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3 id="lerTxt"></h3>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal"
+                                                        class="btn btn-outline-danger unico">Fechar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse " id="versiculoUnico">
+                            <div class="card card-body">
+                                <label for="opcao">Velho Testamento / Novo Testamento</label>
+                                <select class="form-control" id="abbrev">
+
+                                    <option value="gn">Gênesis</option>
+                                    <option value="ex">Êxodo</option>
+                                    <option value="lv">Levítico</option>
+                                    <option value="nm">Números</option>
+                                    <option value="dt">Deuteronômio</option>
+                                    <option value="js">Josué</option>
+                                    <option value="jz">Juízes</option>
+                                    <option value="rt">Rute</option>
+                                    <option value="1sm">1 Samuel</option>
+                                    <option value="2sm">2 Samuel</option>
+                                    <option value="1rs">1 Reis</option>
+                                    <option value="2rs">2 Reis</option>
+                                    <option value="1cr">1 Crônicas</option>
+                                    <option value="2cr">2 Crônicas</option>
+                                    <option value="ed">Esdras</option>
+                                    <option value="ne">Neemias</option>
+                                    <option value="et">Ester</option>
+                                    <option value="job">Jó</option>
+                                    <option value="sl">Salmos</option>
+                                    <option value="pv">Provérbios</option>
+                                    <option value="ec">Eclesiastes</option>
+                                    <option value="ct">Cânticos dos Cânticos</option>
+                                    <option value="is">Isaías</option>
+                                    <option value="jr">Jeremias</option>
+                                    <option value="lm">Lamentações</option>
+                                    <option value="ez">Ezequiel</option>
+                                    <option value="dn">Daniel</option>
+                                    <option value="os">Oseias</option>
+                                    <option value="jl">Joel</option>
+                                    <option value="am">Amós</option>
+                                    <option value="ob">Obadias</option>
+                                    <option value="mq">Miqueias</option>
+                                    <option value="na">Naum</option>
+                                    <option value="hc">Habacuque</option>
+                                    <option value="sf">Sofonias</option>
+                                    <option value="ag">Ageu</option>
+                                    <option value="zc">Zacarias</option>
+                                    <option value="ml">Malaquias</option>
+
+                                    <option value="mt">Mateus</option>
+                                    <option value="mc">Marcos</option>
+                                    <option value="lc">Lucas</option>
+                                    <option value="jo">João</option>
+                                    <option value="at">Atos dos Apóstolos</option>
+                                    <option value="rm">Romanos</option>
+                                    <option value="1co">1 Coríntios</option>
+                                    <option value="2co">2 Coríntios</option>
+                                    <option value="gl">Galátas</option>
+                                    <option value="ef">Efésios</option>
+                                    <option value="fp">Filipenses</option>
+                                    <option value="cl">Colossenses</option>
+                                    <option value="1ts">1 Tessalonicenses</option>
+                                    <option value="2ts">2 Tessalonicenses</option>
+                                    <option value="1tm">1 Timóteo</option>
+                                    <option value="2tm">2 Timóteo</option>
+                                    <option value="tt">Tito</option>
+                                    <option value="fm">Filemon</option>
+                                    <option value="hb">Hebreus</option>
+                                    <option value="tg">Tiago</option>
+                                    <option value="1pe">1 Pdro</option>
+                                    <option value="2pe">2 Pedro</option>
+                                    <option value="1jo">1 João</option>
+                                    <option value="2jo">2 João</option>
+                                    <option value="3jo">3 João</option>
+                                    <option value="jd">Judas</option>
+                                    <option value="ap">Apocalipse</option>
+                                </select>
+                                <br>
+                                <!-- versão -->
+                                <div class="form-group">
+                                    <label for="versao">Versão</label>
+                                    <select class="form-control" id="version">
+                                        <option value="nvi">Nova Versão Internacional - NVI</option>
+                                        <option value="acf">Almeida Corrigida Fiel - ACF</option>
+                                        <option value="apee">Francês - APEE</option>
+                                        <option value="bbe">Bíblia em Inglês Básico - BBE</option>
+                                        <option value="kjv">King James Version - KJV</option>
+                                        <option value="ra">Revista Atualizada - RA</option>
+                                        <option value="rvr">Reina Valera - RVR</option>
+                                    </select>
+                                </div>
+                                <!-- input capítulo -->
+                                <div class="form-group">
+                                    <label for="chapter">Capítulo</label>
+                                    <input type="number" class="form-control" id="chapter" placeholder="Capítulo"
+                                        min="1">
+                                </div>
+                                <!-- versículo -->
+                                <div class="form-group">
+                                    <label for="number">Versículo</label>
+                                    <input type="number" class="form-control" id="number" placeholder="Versículo"
+                                        min="1">
+                                </div>
+                                <!-- botão para abir modal -->
+                                <button type="button" onclick="versiculoUnico()" class="btn btn-success"
+                                    data-target="#unicoVersiculo" data-toggle="modal">Buscar</button>
+
+                                <!-- modal para ler unico versículo -->
+                                <div class="modal fade" id="unicoVersiculo" tabindex="-1" role="dialog"
+                                    aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="TituloModalLongoExemplo">
+                                                    <h1 id="lerDescricaoVersiculo"></h1>
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h3 id="lerUmVersiculo"></h3>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal"
+                                                    class="btn btn-outline-danger ">Fechar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </header>
+
+                </div>
+            </div>
+        </div>
+        <div class=" text-center centro">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md">
+                            <small>Igreja Metodista Ebenézer - Belford Roxo<br>
+                                By Márcio</small>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+
+            
+        </script>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

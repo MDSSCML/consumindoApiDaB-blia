@@ -1,0 +1,77 @@
+h1 {
+
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: grey;
+}
+
+.modal-title {
+    color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#ler {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: dimgray;
+}
+
+h5 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+span {
+    display: none;
+}
+
+@media screen and (max-width:462px) {
+    p {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:462px) {
+    span {
+        display: flex;
+    }
+
+    .card {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width:463px) {
+    .botao {
+        display: none;
+
+    }
+}
+
+.card {
+    box-shadow: inset 0px 0px 25px 10px dimgray;
+}
+
+#capituloTop,
+#antigoTop {
+    position: sticky;
+    top: 0px;
+    background-color: black;
+    color: white;
+    z-index: 2;
+}
+
+.unico {
+    position: fixed;
+    bottom: 30px;
+
+}
