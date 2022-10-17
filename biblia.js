@@ -1,10 +1,10 @@
 const buscar = () => {
-    const url = `https://www.abibliadigital.com.br/api/books`;
+    const url = `//www.abibliadigital.com.br/api/books`;
     fetch(url).then(res => res.json())
         .then(data => {
             for (datas of data) {
 
-                document.getElementById("ler").innerHTML += `Livro: ${datas.name}<br> 
+                document.getElementById("ler").innerHTML += `Livro: ${datas.name}<br>
             Autor: ${datas.author}<br> Quant-Capítulo: ${datas.chapters}<br>
             Testamento: ${datas.testament}<br><br>`;
             }
@@ -16,7 +16,7 @@ const novoTestamento = () => {
     var livro = document.getElementById("livro").value;
     var versao = document.getElementById("versao").value;
 
-    const url = `https://www.abibliadigital.com.br/api/verses/${versao}/${livro}/${capitulo}`;
+    const url = `//www.abibliadigital.com.br/api/verses/${versao}/${livro}/${capitulo}`;
     fetch(url).then(res => res.json())
         .then(data => {
             document.getElementById("lerNovo").innerHTML = `Livro: ${data.book.name}<br>
@@ -48,7 +48,7 @@ const antigoTestamento = () => {
     var livroAntigo = document.getElementById("livroAntigo").value;
     var versaoAntigo = document.getElementById("versaoAntigo").value;
 
-    const url = `https://www.abibliadigital.com.br/api/verses/${versaoAntigo}/${livroAntigo}/${capituloAntigo}`;
+    const url = `//www.abibliadigital.com.br/api/verses/${versaoAntigo}/${livroAntigo}/${capituloAntigo}`;
     fetch(url).then(res => res.json())
         .then(data => {
 
@@ -84,7 +84,7 @@ const versiculoUnico = () => {
     let chapter = document.getElementById("chapter").value;
     let number = document.getElementById("number").value;
 
-    const url = `https://www.abibliadigital.com.br/api/verses/${version}/${abbrev}/${chapter}/${number}`;
+    const url = `//www.abibliadigital.com.br/api/verses/${version}/${abbrev}/${chapter}/${number}`;
     fetch(url).then(res => res.json())
         .then(data => {
 
